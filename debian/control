@@ -9,7 +9,7 @@ Vcs-Git: git://github.com/AdrianBan/ipset-persistent
 
 Package: ipset-persistent
 Architecture: all
-Depends: netfilter-persistent (= ${source:Version}), ipset, ${misc:Depends}
+Depends: netfilter-persistent (>= 1.0.0), ipset, ${misc:Depends}
 Suggests: iptables-persistent
 Description: boot-time loader for ipset plugin
  This package provides a set of plugins for nettfilter for load, flush 
