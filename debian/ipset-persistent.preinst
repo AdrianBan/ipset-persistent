@@ -1,0 +1,25 @@
+#!/bin/sh
+
+set -e
+
+
+case "$1" in
+    install|upgrade)
+	if dpkg --compare-versions "$2" le "0.5.2"; then
+	    update-rc.d -f ipset-persistent remove
+	fi
+    if [ -e /etc/ipset/rules ]; then
+        mv -f /etc/ipset/rules /etc/ipset/rules.dpkg-old
+    fi
+	;;
+
+    abort-upgrade)
+	;;
+
+    *)
+        echo "preinst called with unknown argument \`$1'" >&2
+        exit 1
+	;;
+esac
+
+#DEBHELPER#

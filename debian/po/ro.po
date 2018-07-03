@@ -1,0 +1,47 @@
+# ITALIAN TRANSLATION OF IPTABLES-PERSISTENT'S PO-DEBCONF FILE.
+# COPYRIGHT (C) 2011 THE IPTABLES-PERSISTENT'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the iptables-persistent package.
+# Vincenzo Campanella <vinz65@gmail.com>, 2011.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: ipset-persistent\n"
+"POT-Creation-Date: 2018-06-03 10:31+0200\n"
+"PO-Revision-Date: 2018-06-03 10:31+0200\n"
+"Last-Translator: Adrian Ban <adrian@abtelecom.ro>\n"
+"Language-Team: Romanian <>\n"
+"Language: ro\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Type: boolean
+#. Description
+#: ../ipset-persistent.templates:2001
+msgid "Save current IPSet rules?"
+msgstr "Doriti sa salvati regulile curente?"
+
+#. Type: boolean
+#. Description
+#: ../ipset-persistent.templates:2001
+msgid ""
+"Current ipset rules can be saved to the configuration"
+"file /etc/ipset/rules. These rules will then be loaded automatically"
+"during system startup."
+msgstr ""
+"Regulile curente de ipset pot fi salvate in fisierul /etc/ipset/rules."
+"Aceste reguli vor fi incarcate automat la pornirea sistemului."
+
+#. Type: boolean
+#. Description
+#: ../ipset-persistent.templates:2001
+msgid ""
+"Rules are only saved automatically during package installation. See the "
+"manual page of ipset(8) for instructions on keeping the rules file "
+"up-to-date."
+msgstr ""
+"Regulile sunt salvate automat doar in momentul instalarii acestui packet."
+"Verificati manualul ipset(8) pentru instructiunile de salvare ale regulilor "
+"ipset pentru a le mentine actualizate."
+

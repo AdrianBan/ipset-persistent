@@ -1,0 +1,7 @@
+ipset-persistent plugin
+------------------------------------
+
+ipset-persistent is a plugin for netfilter-persistent to load, save and
+flush the ipset rules.
+
+ -- Adrian Ban <adrian@abtelecom.ro>  Tue, 03 Jul 2018 10:52:17 +0200

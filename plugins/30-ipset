@@ -1,0 +1,60 @@
+#!/bin/sh
+
+# This file is part of netfilter-persistent
+# Copyright (C) 2018, Adrian Ban <adrian@abtelecom.ro>
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU General Public License
+# as published by the Free Software Foundation, either version 3
+# of the License, or (at your option) any later version.
+
+set -e
+
+rc=0
+
+pset_cmd="/sbin/ipset"
+ipset_dir="/usr/local/sbin /sbin /usr/sbin"
+
+found_ipset=false
+
+for i in $ipset_dir;
+do
+    if [ -x /$i/ipset ]; then
+        found_ipset=true
+        ipset_cmd="$i/ipset"
+        break
+    fi
+done
+
+if [ $found_ipset = false ]; then
+    echo "INFO: no ipset tools found. Skipping"
+    exit 0
+fi
+
+flush_rules()
+{
+	$ipset_cmd flush 2>&1 | logger -t "$(basename $0)"
+	$ipset_cmd destroy 2>&1 | logger -t "$(basename $0)"
+}
+
+case "$1" in
+start|restart|reload|force-reload)
+	;;
+save)
+	;;
+stop)
+	# Why? because if stop is used, the firewall gets flushed for a variable
+	# amount of time during package upgrades, leaving the machine vulnerable
+	# It's also not always desirable to flush during purge
+	echo "Automatic flushing disabled, use \"flush\" instead of \"stop\""
+	;;
+flush)
+	flush_rules
+	;;
+*)
+    echo "Usage: $0 {start|restart|reload|force-reload|save|flush}" >&2
+    exit 1
+    ;;
+esac
+
+exit $rc

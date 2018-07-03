@@ -1,0 +1,6 @@
+iptables-persistent (1.0.0) unstable; urgency=medium
+
+  * Plugin for ipset to be used with netfilter-persistent for
+  loading, saving, flushing ipset rules
+
+ -- Adrian Ban <adrian@abtelecom.ro>  Tue, 3 Jul 2018 10:18:44 +0200

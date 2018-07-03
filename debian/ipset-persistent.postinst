@@ -1,0 +1,32 @@
+#!/bin/sh
+
+set -e
+
+# Source debconf library
+. /usr/share/debconf/confmodule
+
+case "$1" in
+configure)
+    db_get ipset-persistent/autosave_done || true
+    if [ "x$RET" != "xtrue" ]; then
+        db_get ipset-persistent/autosave || true
+        if [ "x$RET" = "xtrue" ]; then
+	    if which ipset > /dev/null ; then
+		if ipset list > /dev/null; then
+		    ipset save > /etc/ipset/rules
+		else
+                    echo "IPSet: Unable to save (ipset module not loadable?)"
+		fi
+	    else
+                echo "IPSet: Can't find ipset in $PATH, please check your system"
+            fi
+        fi
+
+        db_set ipset-persistent/autosave_done true || true
+    fi
+
+    update-rc.d ipset-persistent remove
+;;
+esac
+
+#DEBHELPER#
