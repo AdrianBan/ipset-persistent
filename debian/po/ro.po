@@ -1,7 +1,7 @@
-# ITALIAN TRANSLATION OF IPTABLES-PERSISTENT'S PO-DEBCONF FILE.
-# COPYRIGHT (C) 2011 THE IPTABLES-PERSISTENT'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the iptables-persistent package.
-# Vincenzo Campanella <vinz65@gmail.com>, 2011.
+# ROMANINA TRANSLATION OF IPSET-PERSISTENT'S PO-DEBCONF FILE.
+# COPYRIGHT (C) 2018 THE IPSET-PERSISTENT'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the ipset-persistent package.
+# Adrian Ban <adrian@abtelecom.ro>, 2018.
 #
 #, fuzzy
 msgid ""

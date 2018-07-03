@@ -1,11 +1,9 @@
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
-Upstream-Name: iptables-persistent
-Upstream-Contact: Jonathan Wiltshire <jmw@debian.org>
+Upstream-Name: ipset-persistent
+Upstream-Contact: Adrian Ban <adrian@abtelecom.ro>
 
 Files: *
-Copyright: © 2009, Simon Richter <sjr@debian.org>
-           © 2010, Chris Silva <racerx@makeworld.com>
-           © 2010, Jonathan Wiltshire <jmw@debian.org>
+Copyright: © 2018, Adrian Ban <adrian@abtelecom.ro>
 License: GPL-3
  This program is free software: you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
